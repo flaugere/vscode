@@ -13,5 +13,7 @@ RUN code-server --install-extension bmewburn.vscode-intelephense-client
 RUN code-server --install-extension nhoizey.gremlins
 RUN code-server --install-extension dbaeumer.vscode-eslint
 RUN code-server --install-extension octref.vetur 
+RUN code-server --install-extension mechatroner.rainbow-csv
+RUN code-server --install-extension mblode.twig-language-2
 
 COPY ./settings.json /root/.local/share/code-server/User/settings.json
