@@ -10,5 +10,23 @@
     "[php]": {
         "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
+    "editor.formatOnSave": false,
+    "vetur.validation.template": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.renderControlCharacters": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.validate": [
+      {
+        "language": "vue",
+        "autoFix": true
+      },
+      {
+        "language": "javascript",
+        "autoFix": true
+      },
+      {
+        "language": "javascriptreact",
+        "autoFix": true
+      }
+    ]
 }
