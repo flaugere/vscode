@@ -1,9 +1,9 @@
-FROM codercom/code-server:latest
+FROM codercom/code-server:3.1.1
 
 USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y php7.2-cli composer php7.2-xml php7.2-gd php7.2-zip
+RUN apt-get update && apt-get install -y php7.3-cli composer php7.3-xml php7.3-gd php7.3-zip
 RUN composer global require friendsofphp/php-cs-fixer sebastian/phpcpd phpmd/phpmd squizlabs/php_codesniffer
 RUN export PATH="$PATH:$HOME/.composer/vendor/bin"
 
