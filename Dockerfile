@@ -1,9 +1,9 @@
-FROM codercom/code-server:3.4.1
+FROM codercom/code-server:4.2.0
 
 USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y php7.3-cli composer php7.3-xml php7.3-gd php7.3-zip
+RUN apt-get update && apt-get install -y php7.4-cli composer php7.4-xml php7.4-gd php7.4-zip
 RUN composer global require friendsofphp/php-cs-fixer sebastian/phpcpd phpmd/phpmd squizlabs/php_codesniffer
 RUN echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> /root/.bashrc
 
