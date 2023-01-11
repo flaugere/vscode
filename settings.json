@@ -28,5 +28,6 @@
         "language": "javascriptreact",
         "autoFix": true
       }
-    ]
+    ],
+    "workbench.colorTheme": "Default Dark+"
 }
