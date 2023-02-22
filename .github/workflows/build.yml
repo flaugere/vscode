@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build Docker Image
+    - name: Get tag name
+      id: get_tag_name
+      run: echo ::set-output name=TAG_NAME::${GITHUB_REF#refs/tags/}
+    - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tag_with_ref: true
+        tags: flaugere/vscode:${{ steps.get_tag_name.outputs.TAG_NAME }}
