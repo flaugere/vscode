@@ -1,0 +1,16 @@
+name: Build Docker Image
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker Image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: flaugere/vscode:${{ github.ref }}
