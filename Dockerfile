@@ -20,6 +20,8 @@ RUN composer global require friendsofphp/php-cs-fixer sebastian/phpcpd phpmd/php
 RUN echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> /root/.bashrc
 COPY *.vsix .
 
+RUN chsh -s $(which zsh) 
+RUn sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 RUN npm install -g pnpm
 RUN code-server --install-extension junstyle.php-cs-fixer
 RUN code-server --install-extension eamodio.gitlens
