@@ -32,5 +32,6 @@ RUN code-server --install-extension octref.vetur
 RUN code-server --install-extension mechatroner.rainbow-csv
 RUN code-server --install-extension mblode.twig-language-2
 RUN code-server --install-extension GitHub.copilot-1.65.7705.vsix
+RUN code-server --install-extension Safurai.Safurai
 
 COPY ./settings.json /root/.local/share/code-server/User/settings.json
