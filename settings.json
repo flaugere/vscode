@@ -1,5 +1,4 @@
 {
-    "php.suggest.basic": false,
     "files.exclude": {
         "**/node_modules": true,
         "**/vendor": true,
@@ -7,9 +6,6 @@
         "**/var/cache": true
     },
     "editor.renderWhitespace": "all",
-    "[php]": {
-        "editor.defaultFormatter": "junstyle.php-cs-fixer"
-    },
     "editor.formatOnSave": false,
     "vetur.validation.template": false,
     "javascript.updateImportsOnFileMove.enabled": "always",

@@ -5,7 +5,6 @@ USER root
 ARG DEBIAN_FRONTEND=noninteractive
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get update && apt-get install -y \
-	php7.4-cli composer php7.4-xml php7.4-gd php7.4-zip \
 	nodejs \
 	vim \
 	ca-certificates \
@@ -21,7 +20,7 @@ RUN echo 'export PATH="$PATH:$HOME/.composer/vendor/bin"' >> /root/.bashrc
 COPY *.vsix .
 
 RUN chsh -s $(which zsh) 
-RUn sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 RUN npm install -g pnpm
 RUN code-server --install-extension junstyle.php-cs-fixer
 RUN code-server --install-extension eamodio.gitlens
