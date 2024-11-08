@@ -1,9 +1,9 @@
-FROM ghcr.io/coder/code-server:4.10.0
+FROM ghcr.io/coder/code-server:4.95.1
 
 USER root
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get update && apt-get install -y \
 	php7.4-cli composer php7.4-xml php7.4-gd php7.4-zip \
 	nodejs \
@@ -31,7 +31,6 @@ RUN code-server --install-extension dbaeumer.vscode-eslint
 RUN code-server --install-extension octref.vetur 
 RUN code-server --install-extension mechatroner.rainbow-csv
 RUN code-server --install-extension mblode.twig-language-2
-RUN code-server --install-extension GitHub.copilot-1.65.7705.vsix
-RUN code-server --install-extension Safurai.Safurai
+RUN code-server --install-extension Continue.continue 
 
 COPY ./settings.json /root/.local/share/code-server/User/settings.json
